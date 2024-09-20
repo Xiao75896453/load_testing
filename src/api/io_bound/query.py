@@ -7,7 +7,7 @@ from sqlalchemy.orm import Session
 from src.models.test_data import TestData
 
 
-def sync_create_test_data(db_session: AsyncSession) -> None:
+def sync_create_test_data(db_session: Session) -> None:
     db_session.execute(insert(TestData).values({"test_data": "create"}))
     db_session.commit()
 
